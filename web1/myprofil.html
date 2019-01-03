@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hello World</title>
+		<link rel="stylesheet" type="text/css" href="mycss.css">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<h1>Hello World</h1>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="myprofil.html" class="current">My Profil</a></li>
+						<li><a href="calculation.html">Calculation</a></li>
+						<li><a href="mycd.html">My Cd Collection</a></li>
+						<li><a href="input.html">Account</a></li>
+					</ul>
+				</nav>
+			</header>
+			<section class="courses">
+				<br><br><br><h2>Convert a string written in JSON format, into a Javascript object.</h2><br>
+					Name : <b id="demo"></b><br>
+					Age : <b id="demo1"></b><br>
+					City : <i id="demo2"></i>
+			
+				<script>
+					var myJSON='{"name":"Fatkhul Khijab", "age":19, "city":"Brebes"}';
+					var myObj=JSON.parse(myJSON);
+					document.getElementById("demo").innerHTML=myObj.name;
+					document.getElementById("demo1").innerHTML=myObj.age;
+					document.getElementById("demo2").innerHTML=myObj.city;
+				</script>
+			</section>
+			<aside>
+				<section class="popular-recipes">
+					<h2>Programming Language</h2>
+					<a href="language.html">C/C++/C#</a>
+					<a href="language.html">Python</a>
+					<a href="language.html">Java</a>
+					<a href="language.html">PHP</a>
+				</section>
+				<section class="contact-details">
+					<h2>Contact</h2>
+					<p>Udinus<br />
+						Programmer
+				</section>
+			</aside>
+			<footer>
+				&copy; 2018 SwordFk
+			</footer>
+		</div>
+	</body>
+</html>

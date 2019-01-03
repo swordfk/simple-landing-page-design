@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hello World</title>
+		<link rel="stylesheet" type="text/css" href="mycss.css">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<h1>Hello World</h1>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="myprofil.html">My Profil</a></li>
+						<li><a href="calculation.html">Calculation</a></li>
+						<li><a href="mycd.html" class="current">My Cd Collection</a></li>
+						<li><a href="input.html">Account</a></li>
+					</ul>
+				</nav>
+			</header>
+			<section class="courses">
+				<br><br><br><center><h2>The XMLHttpRequest Object</h2></center><br><br>
+				<center><button type="button" onclick="loadDoc()">Get my CD collection</button></center>
+				<br><br>
+				<center><table id="demo"></table></center>
+
+				<script>
+				function loadDoc() {
+				  var xhttp = new XMLHttpRequest();
+				  xhttp.onreadystatechange = function() {
+				    if (this.readyState == 4 && this.status == 200) {
+				      myFunction(this);
+				    }
+				  };
+				  xhttp.open("GET", "cd_catalog.xml", true);
+				  xhttp.send();
+				}
+				function myFunction(xml) {
+				  var i;
+				  var xmlDoc = xml.responseXML;
+				  var table="<tr><th>Artist</th><th>Title</th></tr>";
+				  var x = xmlDoc.getElementsByTagName("CD");
+				  for (i = 0; i <x.length; i++) { 
+				    table += "<tr><td>" +
+				    x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+				    "</td><td>" +
+				    x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+				    "</td></tr>";
+				  }
+				  document.getElementById("demo").innerHTML = table;
+				}
+				</script>
+
+			</section>
+			<aside>
+				<section class="popular-recipes">
+					<h2>Programming Language</h2>
+					<a href="language.html">C/C++/C#</a>
+					<a href="language.html">Python</a>
+					<a href="language.html">Java</a>
+					<a href="language.html">PHP</a>
+				</section>
+				<section class="contact-details">
+					<h2>Contact</h2>
+					<p>Udinus<br />
+						Programmer
+				</section>
+			</aside>
+			<footer>
+				&copy; 2018 SwordFk
+			</footer>
+		</div>
+	</body>
+</html>
